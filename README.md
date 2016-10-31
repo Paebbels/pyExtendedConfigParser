@@ -1,12 +1,13 @@
 # ExtendedConfigParser
 
 [![Code Health](https://landscape.io/github/Paebbels/ExtendedConfigParser/master/landscape.svg?style=flat)](https://landscape.io/github/Paebbels/ExtendedConfigParser/master)
+[[![Build Status](https://travis-ci.org/Paebbels/ExtendedConfigParser.svg?branch=master)](https://travis-ci.org/Paebbels/ExtendedConfigParser)](https://travis-ci.org/Paebbels/ExtendedConfigParser/branches)
 ![Latest tag](https://img.shields.io/github/tag/Paebbels/ExtendedConfigParser.svg?style=flat)
 [![Latest release](https://img.shields.io/github/release/Paebbels/ExtendedConfigParser.svg?style=flat)](https://github.com/Paebbels/ExtendedConfigParser/releases)
 [![Apache License 2.0](https://img.shields.io/github/license/Paebbels/ExtendedConfigParser.svg?style=flat)](LICENSE.md)
 
 
-This is an extension and improvement for Pythons ConfigParser.
+This is an extension and improvement for Pythons [ConfigParser](https://docs.python.org/3/library/configparser.html).
 
 ## 1 Overview
 
