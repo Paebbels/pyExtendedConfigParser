@@ -5,7 +5,7 @@
 # ==============================================================================
 # Authors:          Patrick Lehmann
 #
-# Python Module:    Derived and extended configparser from Python standard library
+# Python Module:    Derived and extended ConfigParser from Python standard library
 #
 # Description:
 # ------------------------------------
