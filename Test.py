@@ -36,12 +36,16 @@ from test.test_1.Test import Test as Test_1
 from test.test_2.Test import Test as Test_2
 from test.test_3.Test import Test as Test_3
 from test.test_4.Test import Test as Test_4
+from test.test_5.Test import Test as Test_5
+from test.test_6.Test import Test as Test_6
 
 tests = [
 	Test_1,
 	Test_2,
 	Test_3,
-	Test_4
+	Test_4,
+	Test_5,
+	Test_6
 ]
 
 workingDirectoryPath =  Path.cwd()
@@ -67,12 +71,18 @@ for test in tests:
 	
 	for section,values in t.GetExpected().items():
 		for option,expected in values.items():
-			value = config[section][option]
+			try:
+				value = config[section][option]
+			except KeyError as ex:
+				print("  KeyError: for {ex!s}".format(ex=ex))
+				errors += 1
+				continue
+			
 			if (value != expected):
 				errors += 1
 				print("  {section}:{option} = {value}    expected: {expected}".format(section=section, option=option, value=value, expected=expected))
-
+	
+print("="*80)
 print("Errors: {errors}".format(errors=errors))
-
 
 exit(errors)
