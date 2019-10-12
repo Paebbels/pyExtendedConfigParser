@@ -1,10 +1,17 @@
+![PyPI - License](https://img.shields.io/pypi/l/pyExtendedConfigParser)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Paebbels/pyExtendedConfigParser) 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Paebbels/pyExtendedConfigParser)
+[![Documentation Status](https://readthedocs.org/projects/pyextendedconfigparser/badge/?version=latest)](https://pyextendedconfigparser.readthedocs.io/en/latest/?badge=latest)  
+[![PyPI](https://img.shields.io/pypi/v/pyExtendedConfigParser)](https://pypi.org/project/pyExtendedConfigParser/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyExtendedConfigParser)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/pyExtendedConfigParser)
+![PyPI - Status](https://img.shields.io/pypi/status/pyExtendedConfigParser)
+
 # ExtendedConfigParser
 
-[![Code Health](https://landscape.io/github/Paebbels/ExtendedConfigParser/master/landscape.svg?style=flat)](https://landscape.io/github/Paebbels/ExtendedConfigParser/master)
+<!--
 [[![Build Status](https://travis-ci.org/Paebbels/ExtendedConfigParser.svg?branch=master)](https://travis-ci.org/Paebbels/ExtendedConfigParser)](https://travis-ci.org/Paebbels/ExtendedConfigParser/branches)
-![Latest tag](https://img.shields.io/github/tag/Paebbels/ExtendedConfigParser.svg?style=flat)
-[![Latest release](https://img.shields.io/github/release/Paebbels/ExtendedConfigParser.svg?style=flat)](https://github.com/Paebbels/ExtendedConfigParser/releases)
-[![Apache License 2.0](https://img.shields.io/github/license/Paebbels/ExtendedConfigParser.svg?style=flat)](LICENSE.md)
+-->
 
 
 This is an extension and improvement for Pythons [ConfigParser](https://docs.python.org/3/library/configparser.html).
