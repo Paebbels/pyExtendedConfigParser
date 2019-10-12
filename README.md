@@ -42,11 +42,15 @@ option21 = value21
 option22 = value22
 ```
 
-## 4 Contributors:
+## Contributors:
 
 * [Patrick Lehmann](https://github.com/Paebbels) (Maintainer)
 
 
-## 5 License
+## License
 
 This library is licensed under [Apache License 2.0](LICENSE.md)
+
+-------------------------
+
+SPDX-License-Identifier: Apache-2.0
