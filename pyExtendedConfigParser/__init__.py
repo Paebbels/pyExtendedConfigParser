@@ -50,7 +50,7 @@ from re           import compile as re_compile, escape as re_escape, VERBOSE as 
 from sys          import version_info
 
 from collections  import OrderedDict as _default_dict, ChainMap as _ChainMap, MutableMapping
-from configparser import ConfigParser, SectionProxy, Interpolation, MAX_INTERPOLATION_DEPTH, DEFAULTSECT, _UNSET, ConverterMapping
+from configparser import ConfigParser, SectionProxy, Interpolation, MAX_INTERPOLATION_DEPTH, DEFAULTSECT, _UNSET
 from configparser import NoSectionError, InterpolationDepthError, InterpolationSyntaxError, NoOptionError, InterpolationMissingOptionError
 
 
@@ -68,6 +68,9 @@ class ExtendedSectionProxy(SectionProxy):
 			raise KeyError(self._name + ":" + key)
 		return self._parser.get(self._name, key)
 
+	def __setitem__(self, key, value):
+		super().__setitem__(key, value)
+		self.parser.Interpolation.clear_cache()
 
 # WORKAROUND: Required for ReadTheDocs, which doesn't support Python 3.5 yet.
 if (version_info < (3, 5, 0)):
@@ -78,9 +81,9 @@ if (version_info < (3, 5, 0)):
 		key will be ``None``. The presence of the converter name here enables
 		section proxies to find and use the implementation on the parser class.
 		"""
-		
+
 		GETTERCRE = re_compile(r"^get(?P<name>.+)$")
-		
+
 		def __init__(self, parser):
 			self._parser = parser
 			self._data = {}
@@ -89,10 +92,10 @@ if (version_info < (3, 5, 0)):
 				if not m or not callable(getattr(self._parser, getter)):
 					continue
 				self._data[m.group('name')] = None  # See class docstring.
-		
+
 		def __getitem__(self, key):
 			return self._data[key]
-		
+
 		def __setitem__(self, key, value):
 			try:
 				k = 'get' + key
@@ -108,7 +111,7 @@ if (version_info < (3, 5, 0)):
 			for proxy in self._parser.values():
 				getter = functools_partial(proxy.get, _impl=func)
 				setattr(proxy, k, getter)
-		
+
 		def __delitem__(self, key):
 			try:
 				k = 'get' + (key or None)
@@ -122,10 +125,10 @@ if (version_info < (3, 5, 0)):
 					# don't raise since the entry was present in _data, silently
 					# clean up
 					continue
-		
+
 		def __iter__(self):
 			return iter(self._data)
-		
+
 		def __len__(self):
 			return len(self._data)
 else:
@@ -232,7 +235,8 @@ class ExtendedInterpolation(Interpolation):
 		# print("interpol: RESULT => '{0}'".format(result))
 		return result
 
-	def GetSpecial(self, section, option, path):
+	@staticmethod
+	def GetSpecial(section, option, path):
 		parts = section.split(".")
 		if (path == "Root"):
 			return parts[0]
@@ -342,6 +346,11 @@ class ExtendedConfigParser(ConfigParser):
 		if (interpolation is None):     self._interpolation = Interpolation()
 		elif (interpolation is _UNSET): self._interpolation = ExtendedInterpolation()
 		else:                           self._interpolation = interpolation
+
+	def clear(self):
+		super().clear()
+		if isinstance(self._interpolation, ExtendedInterpolation):
+			self._interpolation.clear_cache()
 
 	@property
 	def Interpolation(self):
