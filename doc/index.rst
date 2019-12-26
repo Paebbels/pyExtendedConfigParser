@@ -10,8 +10,15 @@
 pyExtendedConfigParser Documentation
 ####################################
 
-An extended ConfigParser based on Python's ConfigParser.
+An extended ConfigParser based on Python's ConfigParser for ``*.ini`` files.
 
+.. rubric:: Improvements
+
+* Faster interpolation
+* Interpolation cache
+* Section name interpolation
+* Multiple DEFAULT sections
+* Nested interpolation
 
 Contributors
 ************
