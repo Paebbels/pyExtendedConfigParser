@@ -8,14 +8,19 @@ ExtendedSectionProxy
 ====================
 
 .. autoclass:: pyExtendedConfigParser.ExtendedSectionProxy
+   :show-inheritance:
    :members:
    :private-members:
+
+.. #
+   :special-members: __init__, __str__
 
 
 ExtendedInterpolation
 =====================
 
 .. autoclass:: pyExtendedConfigParser.ExtendedInterpolation
+   :show-inheritance:
    :members:
    :private-members:
 
@@ -24,6 +29,7 @@ ExtendedConfigParser
 ====================
 
 .. autoclass:: pyExtendedConfigParser.ExtendedConfigParser
+   :show-inheritance:
    :members:
    :private-members:
 
@@ -38,10 +44,11 @@ ConverterMapping
 ================
 
 .. autoclass:: pyExtendedConfigParser.ConverterMapping
+   :show-inheritance:
    :members:
    :private-members:
 
 .. seealso::
 
-   Python's ``ConfigParser`` from module :py:mod:`configparser`
+   Python's :class:``~configparser.ConfigParser`` from module :py:mod:`configparser`
       Module to read and write ``*.ini`` configuration files.

@@ -7,7 +7,7 @@
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/pyExtendedConfigParser)
 ![PyPI - Status](https://img.shields.io/pypi/status/pyExtendedConfigParser)
 
-# ExtendedConfigParser
+# pyExtendedConfigParser
 
 <!--
 [[![Build Status](https://travis-ci.org/Paebbels/ExtendedConfigParser.svg?branch=master)](https://travis-ci.org/Paebbels/ExtendedConfigParser)](https://travis-ci.org/Paebbels/ExtendedConfigParser/branches)
